@@ -1,0 +1,36 @@
+<div class="px-3">
+<h3>Your Cart:</h3>
+<table class="table">
+    <tr>
+        <th></th>
+        <!-- <th>Id</th> -->
+        <th></th>
+        <th></th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td align="center">
+            <a (click)="remove(item.product.id)">&#10060;</a>
+        </td>
+        <!-- <td>{{item.product.id}}</td> -->
+        <td>{{item.product.name}}</td>
+        <td>
+            <img src="assets/images/{{item.product.photo}}" width="250" height="100">
+        </td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price}}</td>
+    </tr>
+    
+        <td colspan="4" align="right">Total</td>
+        <td>{{total.toFixed(2)}}</td>
+    
+    <tr>
+      
+        <input type="button" class="btn btn-dark" value="checkOut" (click)="checkOut()"/>
+    </tr>
+</table>
+
+
+{{cartInfo}}
+</div>

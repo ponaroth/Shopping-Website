@@ -1,0 +1,9 @@
+<ng-container *ngIf="auth.isAuthenticated()">
+  <div class="d-flex mt-2 justify-content-center">
+    <a style="font-size:30px" [routerLink]="['/add-product']">
+      Add Product
+    </a>
+  </div>
+</ng-container>
+
+<app-product></app-product>

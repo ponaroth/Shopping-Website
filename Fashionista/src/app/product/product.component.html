@@ -1,0 +1,47 @@
+<div>
+  <a style="font-size:30px" [routerLink]="['/cart']">
+    <i class="fa fa-shopping-cart"></i>:
+    <a style="color:green; font-size:20px">{{cartCount}}</a>
+  </a>
+</div>
+
+<div class="card-columns">
+  <div *ngFor="let product of products" class="card p-2" style="width: 18rem;">
+    <img class="card-img-top" src="assets/images/{{product.photo}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">${{product.price}}</p>
+
+      <a (click)="addToCart(product.id)" class="btn btn-primary">Add to cart</a>
+      <a *ngIf="auth.isAuthenticated()" [routerLink]="['/update-product', { id:product.id }]" class="btn btn-warning">Edit</a>
+
+      <!-- <a [routerLink]="['/cart', { id:product.id }]" href="#" (click)="addToCart(product.id)" class="btn btn-primary">Add to cart</a> -->
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Photo</th>
+        <th>Buy</th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            <img src="assets/images/{{product.photo}}" width="250" height="100">
+        </td>
+        <td>
+            <a [routerLink]="['/cart', { id:product.id }]">Buy Now</a>
+        </td>
+    </tr>
+    
+</table> -->

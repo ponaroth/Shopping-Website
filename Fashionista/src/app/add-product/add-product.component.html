@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <h1 class="page-title">Add New Product</h1>
+      <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+        <div class="form-group">
+          <!-- <label>Product ID</label>
+          <input type="text" class="form-control" formControlName="pid" />
+          <br> -->
+          <label>Product Name</label>
+          <input type="text" class="form-control" formControlName="pname" />
+          <br>
+          <label>Price</label>
+          <input type="text" class="form-control" formControlName="price" />
+          <br>
+          <label>Photo</label>
+          <input type="text" class="form-control" formControlName="photo" />
+          <br>
+
+        </div>
+
+        <!-- <button type="submit" [routerLink]="['/products']" class="btn btn-warning">Commit</button> -->
+
+        <button type="submit" class="btn btn-warning">Commit</button>
+      </form>
+    </div>
+  </div>
+</div>
